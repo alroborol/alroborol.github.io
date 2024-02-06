@@ -6,9 +6,9 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Al
 middle_name: 
 last_name: Roborol
-email: you@example.com
+email: alroborol@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  [Blog](https://alroborol.github.io/blog)  and [projects](https://alroborol.github.io/projects)  from a embedded system software engineer
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -16,7 +16,7 @@ footer_text: >
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: 📟 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: A  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://alroborol.github.io # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -105,7 +105,7 @@ zotero_username: # your zotero username
 wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -124,8 +124,8 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Al Roborol # blog_name will be displayed in your blog page
+blog_description: Blogs about embedded system and other fun stuffs
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -160,7 +160,7 @@ disqus_shortname: al-folio # put your disqus shortname
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
   - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+    rss_url: https://medium.com/@alroborol/feed
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -280,8 +280,8 @@ display_categories: ['blockquotes'] # these categories will be displayed on the 
 
 scholar:
 
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Roborol]
+  first_name: [Al, A.]
 
   style: apa
   locale: en

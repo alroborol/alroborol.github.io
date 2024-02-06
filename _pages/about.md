@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: <a href="https://alroborol.github.io/blog">Blog</a> and <a href="https://alroborol.github.io/projects">projects</a> from a embedded system software engineer
 
 profile:
   align: right
@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Software Engineer</p>
-    <p>Focusing on Embedded System</p>
+    <p>On Embedded System</p>
 
 news: false # includes a list of news items
 latest_posts: true  # includes a list of the newest posts

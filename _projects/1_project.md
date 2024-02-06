@@ -2,7 +2,7 @@
 layout: page
 title: pyAutoPort
 description: A tool for automated UART and ADB interaction
-img: assets/img/12.jpg
+img: 
 importance: 1
 category: Embedded System
 related_publications:

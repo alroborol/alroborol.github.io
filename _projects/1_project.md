@@ -7,6 +7,7 @@ importance: 1
 category: Embedded System
 related_publications:
 giscus_comments: false
+github: https://github.com/sony/pyAutoPort
 redirect: https://github.com/sony/pyAutoPort
 ---
 

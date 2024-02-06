@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project pyAutoPort
+title: pyAutoPort
 description: A tool for automated UART and ADB interaction
 img: assets/img/12.jpg
 importance: 1
-category: work
+category: Embedded System
 related_publications:
 giscus_comments: false
 redirect: https://github.com/sony/pyAutoPort

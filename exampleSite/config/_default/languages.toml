@@ -1,0 +1,13 @@
+################ English language ##################
+[en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
+weight = 1
+
+################ Japanese language ##################
+[ja]
+languageName = "日本語"
+languageCode = "ja"
+contentDir = "content/japanese"
+weight = 2

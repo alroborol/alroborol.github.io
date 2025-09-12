@@ -1,0 +1,29 @@
+{
+  "main": [
+    {
+      "name": "youtube",
+      "icon": "fab fa-youtube",
+      "link": "https://www.youtube.com/"
+    },
+    {
+      "name": "bilibili",
+      "icon": "fab fa-bilibili",
+      "link": "https://www.bilibili.com/"
+    },
+    {
+      "name": "mail",
+      "icon": "fas fa-envelope",
+      "link": "mailto:alroborol@gmail.com"
+    },
+    {
+      "name": "github",
+      "icon": "fab fa-github",
+      "link": "https://github.com/alroborol?tab=repositories"
+    },
+    {
+      "name": "linkedin",
+      "icon": "fab fa-linkedin",
+      "link": "https://www.linkedin.com/"
+    }
+  ]
+}

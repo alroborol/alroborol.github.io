@@ -1,0 +1,53 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[main]]
+weight = 5
+name = "Others"
+
+[[main]]
+weight = 2
+name = "Blog"
+url = "/blog"
+
+[[main]]
+weight = 4
+name = "Contact"
+url = "mailto:alroborol@gmail.com"
+
+[[main]]
+parent = "Others"
+name = "Members"
+url = "/authors"
+
+[[main]]
+parent = "Others"
+name = "Categories"
+url = "/categories"
+
+
+# footer menu
+[[footer]]
+name = "About"
+url = "/about"
+weight = 1
+
+[[footer]]
+name = "Contact"
+url = "mailto:alroborol@gmail.com"
+weight = 2
+
+[[footer]]
+name = "Privacy Policy"
+url = "/privacy-policy"
+weight = 3

@@ -51,7 +51,12 @@ strong {
 }
 
 code {
-  @apply after:border-none;
+  @apply font-mono text-sm;
+}
+
+/* Inline code background and padding for readability */
+.code-inline {
+  @apply bg-light px-1 py-0.5 rounded-sm text-text dark:bg-darkmode-light dark:text-darkmode-text;
 }
 
 blockquote > p {

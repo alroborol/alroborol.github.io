@@ -1,82 +1,166 @@
 {{ define "main" }}
-  <!-- Banner -->
-  {{ with .Params.banner }}
-    <section class="section pt-14">
-      <div class="container">
-        <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
-              {{ .title | markdownify }}
-            </h1>
-            <p class="mb-8">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a
-                  class="btn btn-primary"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-          <div class="col-12">
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
-          </div>
-        </div>
-      </div>
-    </section>
-  {{ end }}
-  <!-- /Banner -->
+<!-- Banner -->
+{{ with .Params.banner }}
+<section class="section pt-14">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="lg:col-7 md:col-9 mb-8 text-center">
+        <h1 class="mb-4 text-h3 lg:text-h1">
+          {{ .title | markdownify }}
+        </h1>
+        <p class="mb-8">
+          {{ .content | markdownify }}
+        </p>
+        {{ $rawBtns := .buttons }}
+        {{ if $rawBtns }}
+        {{/* Separate contact from others to move it last */}}
+        {{ $contact := slice }}
+        {{ $others := slice }}
+        {{ range $i, $b := $rawBtns }}
+        {{ if or (eq (lower $b.label) "contact") (strings.HasSuffix $b.link "/contact/") (strings.HasSuffix $b.link
+        "/contact") (eq (lower $b.label) "お問い合わせ") }}
+        {{ $contact = $contact | append $b }}
+        {{ else }}
+        {{ $others = $others | append $b }}
+        {{ end }}
+        {{ end }}
+        {{ $btns := $others }}
+        {{ if gt (len $contact) 0 }}
+        {{ $btns = $btns | append (index $contact 0) }}
+        {{ else }}
+        {{ $btns = $rawBtns }}
+        {{ end }}
 
-  <!-- Features -->
-  {{ range $i, $e:= .Params.features }}
+        {{/* Find explicit primary if provided in front matter */}}
+        {{ $primaryLabel := "" }}
+        {{ range $i, $b := $btns }}
+        {{ if $b.primary }}
+        {{ $primaryLabel = $b.label }}
+        {{ end }}
+        {{ end }}
+
+        {{ if ne $primaryLabel "" }}
+        {{/* If an explicit primary is set, move it to the end */}}
+        {{ $primaryBtn := slice }}
+        {{ $newBtns := slice }}
+        {{ range $i, $b := $btns }}
+        {{ if eq (lower $b.label) (lower $primaryLabel) }}
+        {{ $primaryBtn = $primaryBtn | append $b }}
+        {{ else }}
+        {{ $newBtns = $newBtns | append $b }}
+        {{ end }}
+        {{ end }}
+        {{ if gt (len $primaryBtn) 0 }}
+        {{ $btns = $newBtns | append (index $primaryBtn 0) }}
+        {{ else }}
+        {{ $btns = $btns }}
+        {{ end }}
+        {{ end }}
+
+        {{ range $i, $b := $btns }}
+        {{ if $b.enable }}
+        {{ $class := "btn" }}
+        {{ if ne $primaryLabel "" }}
+        {{/* Use explicit primary */}}
+        {{ if eq (lower $b.label) (lower $primaryLabel) }}
+        {{ $class = printf "%s %s" $class "btn-primary ml-3" }}
+        {{ else }}
+        {{ $class = printf "%s %s" $class "btn-outline-primary ml-3" }}
+        {{ end }}
+        {{ else }}
+        {{/* fallback: if contact exists make it primary; otherwise first button primary */}}
+        {{ if gt (len $contact) 0 }}
+        {{ if or (eq (lower $b.label) "contact") (strings.HasSuffix $b.link "/contact/") (strings.HasSuffix $b.link
+        "/contact") (eq (lower $b.label) "お問い合わせ") }}
+        {{ $class = printf "%s %s" $class "btn-primary ml-3" }}
+        {{ else }}
+        {{ $class = printf "%s %s" $class "btn-outline-primary ml-3" }}
+        {{ end }}
+        {{ else }}
+        {{ if eq $i 0 }}
+        {{ $class = printf "%s %s" $class "btn-primary" }}
+        {{ else }}
+        {{ $class = printf "%s %s" $class "btn-outline-primary ml-3" }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        <a class="{{ $class }}" href="{{ $b.link | relLangURL }}" {{ if strings.HasPrefix $b.link `http` }}
+          target="_blank" rel="noopener" {{ end }}>
+          {{ $b.label }}
+          <i class="fa fa-arrow-right pl-2"></i>
+        </a>
+        {{ end }}
+        {{ end }}
+        {{ else }}
+        {{ with .button }}
+        {{ if .enable }}
+        <a class="btn btn-primary" href="{{ .link | relLangURL }}" {{ if strings.HasPrefix .link `http` }}
+          target="_blank" rel="noopener" {{ end }}>
+          {{ .label }}
+          <i class="fa fa-arrow-right pl-2"></i>
+        </a>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </div>
+      <div class="col-12">
+        {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]"
+        "DisplayXL" "800x" ) }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- /Banner -->
+
+  <!-- Testimonials from Front Matter (Slider Layout) -->
+  {{ range $i, $e:= .Params.testimonials }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
       <div class="container">
-        <div class="row items-center justify-between">
-          <div
-            class="mb:md-0 {{ if not (modBool $i 2) }}
-              md:order-2
-            {{ end }} md:col-5 mb-6">
-            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
-          </div>
-          <div
-            class="{{ if not (modBool $i 2) }}
-              md:order-1
-            {{ end }} md:col-7 lg:col-6">
-            <h2 class="mb-4">
+        <div class="row justify-center">
+          <div class="lg:col-8 mb-10 text-center">
+            <h2 class="mb-4 text-h3 lg:text-h2">
               {{ .title | markdownify }}
             </h2>
-            <p class="mb-8 text-lg">
+            <p class="text-lg">
               {{ .content | markdownify }}
             </p>
-            <ul>
-                {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
-                  {{ . | markdownify }}
-                </li>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="swiper testimonial-slider">
+              <div class="swiper-wrapper">
+                {{ $sectionPath := .button.link | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+                {{ $section := site.GetPage $sectionPath }}
+                {{ if $section }}
+                  {{ range $section.RegularPages }}
+                    <div class="swiper-slide text-left">
+                      {{ partial "components/blog-card" . }}
+                    </div>
+                  {{ end }}
                 {{ end }}
-            </ul>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+              </div>
+              <div class="testimonial-slider-pagination mt-9 flex items-center justify-center text-center"></div>
+            </div>
+          </div>
+        </div>
+        {{ with .button }}
+          {{ if .enable }}
+            <div class="row mt-6">
+              <div class="col-12 text-center">
+                <a class="btn btn-primary" href="{{ .link | relLangURL }}">
                   {{ .label }}
                   <i class="fa fa-arrow-right pl-2"></i>
                 </a>
-              {{ end }}
-            {{ end }}
-          </div>
-        </div>
+              </div>
+            </div>
+          {{ end }}
+        {{ end }}
       </div>
     </section>
   {{ end }}
-  <!-- /Features -->
+  <!-- /Testimonials from Front Matter -->
 
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
@@ -141,4 +225,43 @@
     {{ end }}
   {{ end }}
   <!-- /Testimonials -->
+
+  <!-- Features -->
+  {{ range $i, $e:= .Params.features }}
+    <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+      <div class="container">
+        <div class="row items-center justify-between">
+          {{ $reverse := not (modBool $i 2) }}
+          <div class="mb:md-0 {{ if $reverse }}md:order-2{{ end }} md:col-5 mb-6">
+            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+          </div>
+          <div class="{{ if $reverse }}md:order-1{{ end }} md:col-7 lg:col-6">
+            <h2 class="mb-4">
+              {{ .title | markdownify }}
+            </h2>
+            <p class="mb-8 text-lg">
+              {{ .content | markdownify }}
+            </p>
+            <ul>
+              {{ range .bulletpoints }}
+                <li class="relative mb-4 pl-6">
+                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                  {{ . | markdownify }}
+                </li>
+              {{ end }}
+            </ul>
+            {{ with .button }}
+              {{ if .enable }}
+                <a class="btn btn-primary mt-6" href="{{ .link | relLangURL }}">
+                  {{ .label }}
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Features -->
 {{ end }}

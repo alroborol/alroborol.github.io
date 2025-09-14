@@ -1,2 +1,22 @@
-/* DO NOT WRITE ANY STYLE IN THIS FILE */
-/* If you want to add your own styles, please write it in the `./assets/css/custom.css` file. */
+/* Section Zoom Animation */
+section {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+section.is-visible {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+}
+
+/* Exclude top-level elements to ensure immediate visibility on load */
+.section.pt-14,
+.banner,
+header {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}

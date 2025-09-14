@@ -19,6 +19,13 @@
   new Swiper(".testimonial-slider", {
     spaceBetween: 24,
     loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    mousewheel: {
+      forceToAxis: true,
+    },
     pagination: {
       el: ".testimonial-slider-pagination",
       type: "bullets",
@@ -33,4 +40,32 @@
       },
     },
   });
+  // Intersection Observer for Section Animations
+  const initSectionAnimations = () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      sectionObserver.observe(section);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSectionAnimations);
+  } else {
+    initSectionAnimations();
+  }
 })();

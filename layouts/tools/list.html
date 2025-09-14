@@ -1,0 +1,40 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <!-- Product List Style (using banner image from each product md) -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {{ range .Pages }}
+          <section class="section-sm bg-gradient mb-8">
+            <div class="row items-center justify-between">
+                <div class="mb-md-0 md:col-5 mb-6">
+                {{ if .Params.image }}
+                  {{ partial "image" (dict "Src" .Params.image "Alt" "Product image" "Loading" "lazy" "Class" "mx-auto") }}
+                {{ else if .Params.banner.image }}
+                  {{ partial "image" (dict "Src" .Params.banner.image "Alt" "Product image" "Loading" "lazy" "Class" "mx-auto") }}
+                {{ end }}
+                </div>
+              <div class="md:col-7 lg:col-6">
+                <h2 class="mb-4">
+                  {{ .Title }}
+                </h2>
+                <p class="mb-8 text-lg">
+                  {{ with .Params.banner.title }}{{ . }}{{ end }}
+                </p>
+                <p class="mb-8 text-lg">
+                  {{ with .Params.banner.content }}{{ . }}{{ end }}
+                </p>
+                <a class="btn btn-primary mt-6" href="{{ .RelPermalink }}">
+                  Check It
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <!-- /Product List Style -->
+{{ end }}

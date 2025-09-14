@@ -2,7 +2,7 @@
   <section class="section pt-7">
     <div class="container">
       <div class="row justify-center">
-        <article class="lg:col-10">
+        <article class="lg:col-10 reveal reveal-bottom">
           {{ $image:= .Params.image }}
           {{ if $image }}
             <div class="mb-10">
@@ -55,7 +55,7 @@
                       <a
                         class="bg-light hover:bg-primary dark:bg-darkmode-light dark:hover:bg-darkmode-primary dark:hover:text-text-dark m-1 block rounded px-3 py-1 hover:text-white"
                         href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-                        {{ . | humanize }}
+                        {{ . }}
                       </a>
                     </li>
                   {{ end }}
@@ -80,7 +80,7 @@
       {{ $related := .Site.RegularPages.Related . | first 10 }}
       {{ $related = $related | shuffle | first 3 }}
       {{ with $related }}
-        <div class="section pb-0">
+        <div class="section pb-0 reveal reveal-bottom">
           <h2 class="h3 mb-12">{{ T "related_posts" }}</h2>
           <div class="row">
             {{ range . }}

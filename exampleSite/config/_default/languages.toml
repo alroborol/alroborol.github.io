@@ -8,6 +8,6 @@ weight = 1
 ################ Japanese language ##################
 [ja]
 languageName = "日本語"
-languageCode = "ja"
+languageCode = "ja-jp"
 contentDir = "content/japanese"
 weight = 2

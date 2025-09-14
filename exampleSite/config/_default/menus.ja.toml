@@ -1,0 +1,45 @@
+# メインメニュー
+[[main]]
+name = "ホーム"
+url = "/"
+weight = 1
+
+[[main]]
+name = "AI開発支援ツール"
+url = "/tools"
+weight = 2
+
+[[main]]
+name = "ブログ"
+url = "/blog"
+weight = 3
+
+[[main]]
+name = "お問い合わせ"
+url = "/contact"
+weight = 5
+
+[[main]]
+name = "その他"
+weight = 6
+
+[[main]]
+parent = "その他"
+name = "カテゴリー"
+url = "/categories"
+
+[[main]]
+name = "AI制作の事例"
+url = "/made-by-ai"
+weight = 3
+
+# フッターメニュー
+[[footer]]
+name = "お問い合わせ"
+url = "/contact/"
+weight = 2
+
+[[footer]]
+name = "プライバシーポリシー"
+url = "/privacy-policy"
+weight = 3

@@ -34,12 +34,13 @@
   @apply prose-h2:text-h2-sm md:prose-h2:text-h2;
   @apply prose-h3:text-h3-sm md:prose-h3:text-h3;
   @apply prose-p:text-base prose-p:text-text dark:prose-p:text-darkmode-text;
-  @apply prose-a:text-text prose-a:[&.btn]:no-underline  dark:prose-a:text-darkmode-text;
+  @apply prose-a:text-text prose-a:[&.btn]:no-underline dark:prose-a:text-darkmode-text;
   @apply prose-img:max-w-full prose-img:rounded;
   @apply prose-strong:text-text-dark dark:prose-strong:text-darkmode-text;
   @apply prose-hr:border-border dark:prose-hr:border-darkmode-border;
   @apply prose-pre:rounded-lg prose-pre:bg-light dark:prose-pre:bg-darkmode-light;
-  @apply prose-code:text-darkmode-text-dark;
+  @apply prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:font-mono prose-pre:text-sm prose-pre:border prose-pre:border-border dark:prose-pre:border-darkmode-border prose-pre:text-text dark:prose-pre:text-darkmode-text;
+  @apply prose-code:bg-light prose-code:px-1 prose-code:rounded-sm prose-code:font-mono prose-code:text-sm dark:prose-code:bg-darkmode-light dark:prose-code:text-darkmode-text;
   @apply prose-li:text-text dark:prose-li:text-darkmode-text;
   @apply prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-primary prose-blockquote:bg-light prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:font-secondary prose-blockquote:text-2xl prose-blockquote:not-italic prose-blockquote:text-text-dark dark:prose-blockquote:border-darkmode-primary dark:prose-blockquote:bg-darkmode-light dark:prose-blockquote:text-darkmode-text-light;
   @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border prose-table:before:border-border prose-table:before:content-[""] dark:prose-table:before:border-darkmode-border;

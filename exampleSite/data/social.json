@@ -13,17 +13,12 @@
     {
       "name": "mail",
       "icon": "fas fa-envelope",
-      "link": "mailto:alroborol@gmail.com"
+      "link": "/contact"
     },
     {
       "name": "github",
       "icon": "fab fa-github",
       "link": "https://github.com/alroborol?tab=repositories"
-    },
-    {
-      "name": "linkedin",
-      "icon": "fab fa-linkedin",
-      "link": "https://www.linkedin.com/"
     }
   ]
 }

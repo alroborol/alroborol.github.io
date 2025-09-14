@@ -1,34 +1,30 @@
 ############# English navigation ##############
 
 # main menu
+
 [[main]]
 name = "Home"
 url = "/"
 weight = 1
 
 [[main]]
-name = "About"
-url = "/about"
+name = "AI Tools"
+url = "/tools"
+weight = 2
+
+[[main]]
+name = "Blog"
+url = "/blog"
 weight = 3
 
 [[main]]
-weight = 5
-name = "Others"
-
-[[main]]
-weight = 2
-name = "Blog"
-url = "/blog"
-
-[[main]]
-weight = 4
 name = "Contact"
-url = "mailto:alroborol@gmail.com"
+url = "/contact"
+weight = 5
 
 [[main]]
-parent = "Others"
-name = "Members"
-url = "/authors"
+name = "Others"
+weight = 6
 
 [[main]]
 parent = "Others"
@@ -36,15 +32,15 @@ name = "Categories"
 url = "/categories"
 
 
+[[main]]
+name = "AI Creations"
+url = "/made-by-ai"
+weight = 3
+
 # footer menu
 [[footer]]
-name = "About"
-url = "/about"
-weight = 1
-
-[[footer]]
 name = "Contact"
-url = "mailto:alroborol@gmail.com"
+url = "/contact"
 weight = 2
 
 [[footer]]

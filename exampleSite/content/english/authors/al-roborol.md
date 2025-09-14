@@ -1,6 +1,6 @@
 ---
 title: Al Roborol
-email: alroborol@gmail.com
+email: 
 image: "/images/avatar.png"
 description: AI specialist with over 10 years of hands-on experience designing, developing, and deploying embedded solutions.
 social:
@@ -14,7 +14,7 @@ social:
 
   - name: mail
     icon: fas fa-envelope
-    link: mailto:alroborol@gmail.com
+    link: /contact/
 
   - name: github
     icon: fab fa-github

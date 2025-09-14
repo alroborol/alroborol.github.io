@@ -13,7 +13,7 @@
     {
       "name": "mail",
       "icon": "fas fa-envelope",
-      "link": "mailto:alroborol@gmail.com"
+      "link": "/contact"
     },
     {
       "name": "github",

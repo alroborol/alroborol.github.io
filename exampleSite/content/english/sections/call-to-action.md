@@ -6,7 +6,7 @@ description: "Unlock actionable AI for your business—experience speed, securit
 button:
   enable: true
   label: "Get Started Now"
-  link: "mailto:alroborol@gmail.com"
+  link: "/contact"
 
 # don't create a separate page
 build:

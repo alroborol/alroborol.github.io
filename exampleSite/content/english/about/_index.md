@@ -3,28 +3,34 @@
 title: "About Al Roborol — AI Consultant"
 meta_title: "About Al Roborol"
 description: "Independent AI consultant helping executives and managers unlock business value with hands-on, secure, and actionable AI solutions."
-image: "/images/avatar.png"
+image: "/images/about-1.png"
 draft: false
 ---
 
-## Empowering Your Business with Actionable AI
+## Unlock Actionable AI with Local Models
 
-I’m Al Roborol, an independent AI consultant dedicated to helping executives and managers harness the full potential of artificial intelligence. My mission is to deliver practical, secure, and high-impact AI solutions that drive measurable business results.
+I’m Al Roborol, an independent AI consultant with deep engineering experience at a leading global electronics company. My background in designing and deploying complex, mission-critical systems means I understand how to deliver secure, scalable AI solutions that drive real business value. My approach guarantees:
 
-### What Sets Me Apart
+- **No Initial PoC Fees:** Validate your AI ideas with zero upfront cost.
+- **No Vendor Lock-In:** Retain full control and flexibility—no reliance on proprietary platforms.
+- **No Data Leakage:** All solutions run locally, ensuring your data stays private and compliant.
 
-- **Hands-On Implementation:** I don’t just advise; I deliver working prototypes and integrations tailored to your needs.
-- **Rapid Proof-of-Concepts:** See the impact of AI quickly, enabling informed decision-making and faster ROI.
-- **Product-to-Context Generation:** Proven expertise in building AI agents that generate actionable, product-specific documentation and insights.
-- **Single Source of Truth:** I ensure your code, design, and test artifacts remain linked for full lifecycle consistency.
-- **High Consistency:** Documentation and test cases automatically stay aligned with the latest code and design changes.
-- **Local LLM-Powered Intelligence:** Secure, private, and context-aware AI running fully on your infrastructure—your data never leaves your environment.
-- **Executive-Focused Consulting:** Tailored guidance for managers and leaders, focusing on measurable business outcomes and ROI.
-- **Lean, Personalized Engagement:** As an independent consultant, I offer flexible, cost-efficient, and highly responsive service.
+### Direct, Senior-Level Partnership
+
+- **Expert Guidance:** Collaborate directly with an experienced AI architect and engineer who knows how to bridge technical innovation with business outcomes.
+- **Agile Delivery:** Fast, responsive iterations tailored to your business needs—no unnecessary layers or delays.
+
+### Distinct Advantages
+
+- **Risk-Free Prototyping:** Rapidly test and refine AI concepts with minimal investment and maximum transparency.
+- **Local, Private Deployments:** Solutions are built and deployed on your infrastructure, leveraging open-source models for security and compliance.
+- **Integrated Knowledge Management:** Code, design, and test assets are automatically linked for seamless development and traceability.
+- **Continuous Alignment:** Documentation and test cases are kept up-to-date with your evolving codebase and architecture.
 
 ### My Approach
 
-I work closely with your team to identify high-impact AI opportunities, design practical solutions, and implement systems that are robust, compliant, and easy to maintain. Whether you need a rapid prototype, a full-scale integration, or strategic guidance, I’m here to help you succeed.
+Drawing on years of hands-on engineering in the electronics industry, I work closely with your team to identify high-impact AI opportunities, design practical solutions, and implement robust, maintainable systems. Whether you need a prototype, full-scale integration, or strategic advice, I help you unlock business value—securely, efficiently, and without compromise.
 
 ---
-Ready to unlock the full potential of AI in your business? [Let’s have a talk.](mailto:alroborol@gmail.com)
+
+Ready to explore secure, vendor-free AI for your business? [Let’s have a talk.](/contact)

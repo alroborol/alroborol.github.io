@@ -1,0 +1,69 @@
+{{ define "main" }}
+  <!-- Banner (from section _index.md) -->
+  {{ with .Params.banner }}
+    <section class="section pt-14">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-7 md:col-9 mb-8 text-center">
+            <h1 class="mb-4 text-h3 lg:text-h1">
+              {{ .title | markdownify }}
+            </h1>
+            <p class="mb-8">
+              {{ .content | markdownify }}
+            </p>
+            {{ with .button }}
+              <a
+                class="btn btn-primary"
+                href="{{ .link | absURL }}"
+                {{ if strings.HasPrefix .link `http` }}
+                  target="_blank" rel="noopener"
+                {{ end }}>
+                Check It
+                <i class="fa fa-arrow-right pl-2"></i>
+              </a>
+            {{ end }}
+          </div>
+          <div class="col-12">
+            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Banner -->
+
+  <!-- Product List Style (using banner image from each product md) -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {{ range .Pages }}
+          <section class="section-sm bg-gradient mb-8">
+            <div class="row items-center justify-between">
+                <div class="mb-md-0 md:col-5 mb-6">
+                {{ with .Params.banner.image }}
+                  {{ partial "image" (dict "Src" . "Alt" "Product image" "Loading" "lazy" "Class" "mx-auto") }}
+                {{ end }}
+                </div>
+              <div class="md:col-7 lg:col-6">
+                <h2 class="mb-4">
+                  {{ .Title }}
+                </h2>
+                <p class="mb-8 text-lg">
+                  {{ with .Params.banner.title }}{{ . }}{{ end }}
+                </p>
+                <p class="mb-8 text-lg">
+                  {{ with .Params.banner.content }}{{ . }}{{ end }}
+                </p>
+                <a class="btn btn-primary mt-6" href="{{ .RelPermalink }}">
+                  Check It
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <!-- /Product List Style -->
+{{ end }}

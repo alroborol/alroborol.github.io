@@ -1,0 +1,66 @@
+{{ define "main" }}
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papm6QJr6QZQ+Q0jrISFRCGDpa2BkLomqKgJo0vvVuv5vW7HQwZ0pniS3pSkeCZMt2rt7NmBGG99nmHn7+1i1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <section class="banner hero-section">
+    <div class="container">
+      <div class="row items-center justify-between">
+        <div class="md:col-6">
+          <h1 class="mb-4">{{ .Title }}</h1>
+          <p class="mb-6 text-lg">{{ .Params.banner.content }}</p>
+          {{ with .Params.banner.button }}
+            {{ if .enable }}
+              <a href="{{ .link }}" class="btn btn-primary">
+                <i class="fab fa-github"></i> {{ .label }}
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+        <div class="md:col-6 text-center">
+            {{ with .Params.banner.image }}
+              {{ partial "image" (dict "Src" . "Alt" "Product image" "Loading" "lazy" "Class" "mx-auto") }}
+            {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="row">
+        {{ range $i, $feature := .Params.features }}
+          <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+            <div class="row items-center justify-between">
+              <div class="mb-md-0 {{ if not (modBool $i 2) }}md:order-2{{ end }} md:col-5 mb-6">
+                  {{ with $feature.image }}
+                    {{ partial "image" (dict "Src" . "Alt" "Product image" "Loading" "lazy" "Class" "mx-auto") }}
+                  {{ end }}
+              </div>
+              <div class="{{ if not (modBool $i 2) }}md:order-1{{ end }} md:col-7 lg:col-6">
+                <h2 class="mb-4">{{ $feature.title }}</h2>
+                <p class="mb-8 text-lg">{{ $feature.content }}</p>
+                {{ if $feature.bulletpoints }}
+                  <ul>
+                    {{ range $feature.bulletpoints }}
+                      <li class="relative mb-4 pl-6">
+                        <i class="fa fa-check absolute left-0 top-1.5"></i>
+                        {{ . }}
+                      </li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
+                {{ with $feature.button }}
+                  {{ if .enable }}
+                    <a class="btn btn-primary mt-6" href="{{ .link }}">
+                      {{ .label }}
+                      <i class="fa fa-arrow-right pl-2"></i>
+                    </a>
+                  {{ end }}
+                {{ end }}
+              </div>
+            </div>
+          </section>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

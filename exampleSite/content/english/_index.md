@@ -42,19 +42,7 @@ features:
       link: ""
 
   - title: "Why Contact Us"
-    image: "/images/service-3.png"
-    content: "We help you perform **Strategic AI Assessment**, **Proof-of-Concept Development** and **Seamless AI Integration**."
-    bulletpoints:
-      - "**Strategic AI Assessment**"
-      - "Evaluate workflows, processes, and business challenges"
-      - "Identify where AI can generate the highest ROI"
-      - "Develop tailored AI adoption strategies for your organization"
-      - "**Proof-of-Concept Development**"
-      - "Rapidly build working AI prototypes"
-      - "**Seamless AI Integration**"
-      - "Integrate AI solutions with existing SDKs and systems"
-      - "Deploy fully local LLMs to ensure data security and compliance"
-      - "Optimize AI workflows for usability and operational efficiency"
+    content: "We help you perform **Strategic AI Assessment**, **Proof-of-Concept Development**, and **Seamless AI Integration**.\n\n**Strategic AI Assessment**\n\n\\- Evaluate workflows, processes, and business challenges\n\n\\- Identify where AI can generate the highest ROI\n\n\\- Develop tailored AI adoption strategies for your organization\n\n**Proof-of-Concept Development**\n\n\\- Rapidly build working AI prototypes\n\n**Seamless AI Integration**\n\n\\- Integrate AI solutions with existing SDKs and systems\n\n\\- Deploy fully local LLMs to ensure data security and compliance\n\n\\- Optimize AI workflows for usability and operational efficiency"
     button:
       enable: false
       label: ""

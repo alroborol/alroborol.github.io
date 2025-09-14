@@ -1,53 +1,50 @@
-############# English navigation ##############
-
-# main menu
+# メインメニュー
 [[main]]
-name = "Home"
+name = "ホーム"
 url = "/"
 weight = 1
 
 [[main]]
-name = "About"
+name = "会社概要"
 url = "/about"
 weight = 3
 
 [[main]]
 weight = 5
-name = "Others"
+name = "その他"
 
 [[main]]
 weight = 2
-name = "Blog"
+name = "ブログ"
 url = "/blog"
 
 [[main]]
 weight = 4
-name = "Contact"
+name = "お問い合わせ"
 url = "/contact"
 
 [[main]]
-parent = "Others"
-name = "Members"
+parent = "その他"
+name = "メンバー"
 url = "/authors"
 
 [[main]]
-parent = "Others"
-name = "Categories"
+parent = "その他"
+name = "カテゴリー"
 url = "/categories"
 
-
-# footer menu
+# フッターメニュー
 [[footer]]
-name = "About"
+name = "会社概要"
 url = "/about"
 weight = 1
 
 [[footer]]
-name = "Contact"
+name = "お問い合わせ"
 url = "mailto:alroborol@gmail.com"
 weight = 2
 
 [[footer]]
-name = "Privacy Policy"
+name = "プライバシーポリシー"
 url = "/privacy-policy"
 weight = 3

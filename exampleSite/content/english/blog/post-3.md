@@ -3,7 +3,7 @@ title: "Why You Should Build AI Agents with Ollama First"
 meta_title: "Build AI Agents with Ollama first to understand the architecture risks in the early stage"
 description: "Distinguishing between AI model limitations and engineering limitations can be hard for AI services. Build AI Agents with Ollama first to understand the architecture risks in the early stage."
 date: 2025-10-10T22:08:00Z
-image: "/images/image-placeholder.png"
+image: "/images/blog-3.png"
 categories: ["Technology", "Insight"]
 author: "Al Roborol"
 tags: ["Technology", "Agent", "LLM"]

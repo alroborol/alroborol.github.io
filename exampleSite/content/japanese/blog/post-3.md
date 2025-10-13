@@ -4,7 +4,7 @@ meta_title: "最初にOllamaでAIエージェントを構築し、アーキテ�
 description: "AIサービスにおいて、AIモデルの限界とエンジニアリングの限界を区別するのは難しい場合があります。最初にOllamaでAIエージェントを構築することで、アーキテクチャのリスクを早期に理解できます。"
 summary: "AIサービスではモデルとエンジニアリングの限界の区別が困難です。Ollamaで先行開発し、アーキテクチャのリスクを早期に把握しましょう。"
 date: 2025-10-10T22:08:00Z
-image: "/images/image-placeholder.png"
+image: "/images/blog-3.png"
 categories: ["Technology", "Insight"]
 author: "Al Roborol"
 tags: ["Technology", "Agent", "LLM"]

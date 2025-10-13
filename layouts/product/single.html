@@ -63,4 +63,18 @@
       </div>
     </div>
   </section>
+
+  {{ if .Params.usage }}
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto lg:col-10">
+          <div class="content">
+            {{ .Params.usage | markdownify }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
 {{ end }}

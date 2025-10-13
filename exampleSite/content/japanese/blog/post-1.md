@@ -4,7 +4,7 @@ meta_title: "MCP：AIの世界とのインターフェース標準化—能力�
 description: "MCPはUSB-Cプロトコルのような標準化を目指していますが、LLM間の知識やコンテキストウィンドウの違いは根本的な障壁です。単に機能リストの交換を標準化するだけでは十分ではありません。"
 summary: "MCPはUSB-Cプロトコルのような標準化を目指していますが、LLM間の知識やコンテキストウィンドウの違いは根本的な障壁です。単に機能リストの交換を標準化するだけでは十分ではありません。"
 date: 2025-09-14T15:42:00Z
-image: "/images/image-placeholder.png"
+image: "/images/blog-1.png"
 categories: ["テクノロジー", "インサイト"]
 author: "アル・ロボロル"
 tags: ["テクノロジー", "MCP", "LLM"]

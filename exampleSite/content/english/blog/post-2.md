@@ -1,10 +1,10 @@
 ---
 title: "Rethinking AI Agent Deployment: Start with Job Design, Not Just Technology"
-meta_title: "MRethinking AI Agent Deployment: Start with Job Design, Not Just Technology"
-description: "EAs companies accelerate their adoption of AI, many organizations are leveraging frameworks such as **MCP (Model Control Platform)** and **A2A (Agent-to-Agent)** from major LLM vendors. These tools support AI agent collaboration and contextual understanding, but are fundamentally LLM-centric rather than business-centric."
+meta_title: "Rethinking AI Agent Deployment: Start with Job Design, Not Just Technology"
+description: "Companies accelerate their adoption of AI, many organizations are leveraging frameworks such as **MCP (Model Control Platform)** and **A2A (Agent-to-Agent)** from major LLM vendors. These tools support AI agent collaboration and contextual understanding, but are fundamentally LLM-centric rather than business-centric."
 summary: "As companies accelerate their adoption of AI, many organizations are leveraging frameworks such as **MCP (Model Control Platform)** and **A2A (Agent-to-Agent)** from major LLM vendors. These tools support AI agent collaboration and contextual understanding, but are fundamentally LLM-centric rather than business-centric."
 date: 2025-09-15T14:18:00Z
-image: "/images/image-placeholder.png"
+image: "/images/blog-2.png"
 categories: ["Technology", "Insight"]
 author: "Al Roborol"
 tags: ["Technology", "Agent", "LLM"]

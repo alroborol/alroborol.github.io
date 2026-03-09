@@ -196,6 +196,6 @@ If you want to know about the ShinkaEvolve too, check their github: https://gith
 
 Of course, details like caching PRs retrieved from GitHub and other chores are omitted. You can check them here: examples/zed_doc_prompt/internal. And here is the system architecture diagram to help you dig more.
 
-![System architecture diagram]({{ "/assets/images/blog-5-diagram.png" | relative_url }})
+![System architecture diagram](/images/blog-5-diagram.png)
 
 
